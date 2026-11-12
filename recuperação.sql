@@ -86,3 +86,23 @@ values
 (3, 'bitcoin', 8.50, 'defi'),
 (4, 'dogecoin', 0.25, 'memecoin'),
 (5, 'usdt', 1.00, 'stablecoin');
+
+insert into transacoes_cripto
+(carteira_id, criptomoeda_id, quantidade, valor_pago)
+values
+(1, 1, 0.05, 4750.00),
+(2, 2, 0.30, 960.00),
+(3, 3, 2.00, 360.00),
+(4, 4, 5000.00, 1250.00),
+(5, 5, 1000.00, 1000.00);
+
+select
+    car.endereco_wallet,
+    car.rede_blockchain,
+    car.saldo_usd,
+    inv.nome as investidor,
+    inv.cpf
+from carteiras car
+inner join investidores inv
+on car.investidor_id = inv.id
+where car.status in ('ativa', 'em analise');
