@@ -51,3 +51,38 @@ create table tansacoes_cripto (
 	references criptomoedas(id)
 	
 );
+
+insert into investidores (nome, cpf, nivel_experiencia)
+values
+('felipe lopez', '12345678901', 2),
+('manuela urbano', '23456789012', 5),
+('lucca matheus', '34567890123', 1),
+('nicolas gabriel', '45678901234', 3),
+('guilherme ribeiro', '56789012345', 4);
+
+insert into carteiras
+(investidor_id, endereco_wallet, rede_blockchain, saldo_usd, status)
+values
+(1, '0xabc123', 'ethereum', 5000.00, 'ativa'),
+(2, '0xdef456', 'bitcoin', 8000.00, 'em analise'),
+(3, '0xghi789', 'solana', 1200.00, 'bloqueada'),
+(4, '0xjkl012', 'ethereum', 3500.00, 'pausada'),
+(5, '0xmno345', 'bitcoin', 9500.00, 'ativa');
+
+insert into corretoras
+(nome_exchange, cnpj, email_suporte)
+values
+('foxbit', '12345678901', 'suporte@binance.com'),
+('inter', '23456789012', 'suporte@coinbase.com'),
+('gremio', '34567890123', 'suporte@kraken.com'),
+('binance', '45678901234', 'suporte@bybit.com'),
+('coinbase', '56789012345', 'suporte@okx.com');
+
+insert into criptomoedas
+(corretora_id, nome_moeda, preco_unitario_usd, categoria)
+values
+(1, 'solana', 95000.00, 'layer1'),
+(2, 'fluminense', 3200.00, 'layer1'),
+(3, 'bitcoin', 8.50, 'defi'),
+(4, 'dogecoin', 0.25, 'memecoin'),
+(5, 'usdt', 1.00, 'stablecoin');
